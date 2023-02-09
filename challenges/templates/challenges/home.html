@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    {% block static %}
+    <link rel="stylesheet" href="{% static "challenges.css" %}">
+    <link rel="stylesheet" href="{% static "includes/header.css" %}">
+    {% endblock %}
+</head>
+<body>
+<ul>
+    {% for months in month %}
+    <li><a href={% url "month-challenge" months %}>{{ months }}</a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
